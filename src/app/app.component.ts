@@ -5,7 +5,10 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  template: `Ola <router-outlet />`,
+  template: `
+    <img src="assets/img/rick-and-morty-logo.svg">
+    <router-outlet />
+  `,
 })
 export class AppComponent {
   title = 'Rick-e-Morty';
