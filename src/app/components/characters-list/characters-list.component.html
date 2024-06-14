@@ -1,0 +1,14 @@
+<div class="row">
+  @for(character of characters$(); track character){
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+
+    <img [src]="character.image" [alt]="character.name">
+    <strong>{{ character.name }}</strong><br>
+    <app-characters-list-item-preview [character]="character" />
+    <!-- <app-characters-list-preview [character]="character" /> -->
+  </div>
+  }
+  @empty {
+  Lista vazia
+  }
+</div>
