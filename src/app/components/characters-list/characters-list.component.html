@@ -1,14 +1,18 @@
-<div class="row">
-  @for(character of characters$(); track character){
-  <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+<input type="text" [(ngModel)]="params.name" (keydown)="searchCharacters()" />
 
-    <img [src]="character.image" [alt]="character.name">
-    <strong>{{ character.name }}</strong><br>
+@if(characters$()){
+<div class="row" style="display: flex; flex-wrap: wrap;">
+  @for(character of characters$(); track character){
+  <div class="col-12 col-sm-6 col-md-4 col-lg-2" style="width: 250px">
     <app-characters-list-item-preview [character]="character" />
-    <!-- <app-characters-list-preview [character]="character" /> -->
   </div>
   }
   @empty {
   Lista vazia
   }
 </div>
+}
+
+{{ pagesCount() }} / {{ pagesTotal() }}
+<button (click)="previousPage()" [disabled]="pagesCount() == 1">Anterior</button>
+<button (click)="nextPage()" [disabled]="pagesCount() == pagesTotal()">Próxima</button>

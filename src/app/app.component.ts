@@ -13,11 +13,11 @@ import { HeaderComponent } from '@shared/layout/header/header.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, AsyncPipe, CommonModule, HeaderComponent],
-  // template: `
-  //   <img src="assets/img/rick-and-morty-logo.svg">
-  //   <router-outlet />
-  // `,
-  templateUrl: './app.component.html',
+  template: `
+    <app-header />
+    <router-outlet />
+  `,
+  //templateUrl: './app.component.html',
 })
 
 export class AppComponent {
