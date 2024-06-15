@@ -52,7 +52,21 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
   //   this.searchCharacters();
   // }
 
+  previousPage() {
+    if (this.pagesCount() != 1) {
+      //this.params.page -= 1;
+      this.pagesCount.update(val => val - 1);
+      this.searchCharacters();
+    }
+  }
 
+  nextPage() {
+    if (this.pagesCount() != this.pagesTotal()) {
+      //this.params.page += 1;
+      this.pagesCount.update(val => val + 1);
+      this.searchCharacters();
+    }
+  }
 
   ngOnDestroy(): void {
   }
