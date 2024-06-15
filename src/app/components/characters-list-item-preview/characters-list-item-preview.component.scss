@@ -1,0 +1,49 @@
+:host{
+  .character-list-item-preview{
+    backdrop-filter: blur(5px);
+    background: rgb(10, 10, 10, .8);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+    .image-container{
+      overflow: hidden;
+
+      img{
+        filter: grayscale(.5);
+        transition: all .2s;
+
+        &:hover{
+          filter: grayscale(0);
+          transform: scale(1.2) rotate(5deg);
+          transition: all .2s;
+        }
+      }
+    }
+
+    .fav-container{
+      align-items: center;
+      aspect-ratio: 1;
+      backdrop-filter: blur(5px);
+      background: rgba(0, 0, 0, .5);
+      border-radius: 100%;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      padding: 5px 5px 0 0;
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      transition: all .2s;
+      width: 40px;
+      z-index: 2;
+
+      &:hover{
+        background: rgba(255, 255, 255, .5);
+        color: #333;
+        transition: all .2s;
+      }
+    }
+  }
+}

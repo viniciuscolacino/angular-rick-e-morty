@@ -1,0 +1,37 @@
+@import 'bootstrap/scss/bootstrap';
+/* You can add global styles to this file, and also import other style files */
+.creepster-regular {
+  font-family: "Creepster", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import url(_global.scss);
+
+body{
+  background-attachment: scroll;
+  background-image: url('assets/img/theme-light/bg-rick.jpg'), url(assets/img/theme-light/bg-morty.jpg);
+  background-position: left 10px bottom, right 10px bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto 300px;
+  padding-bottom: 200px;
+
+  @include media-breakpoint-up(lg) {
+    background-attachment: fixed;
+    background-size: auto 50%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    background-attachment: fixed;
+    background-size: auto 60%;
+    padding-bottom: 0;
+
+  }
+}

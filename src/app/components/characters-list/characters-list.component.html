@@ -1,18 +1,20 @@
 <input type="text" [(ngModel)]="params.name" (change)="params.species = params.name" (keyup)="searchCharacters()"
   placeholder="Procure por nome ou espécie" />
 
-@if(characters$()){
-<div class="row" style="display: flex; flex-wrap: wrap;">
-  @for(character of characters$(); track character){
-  <div class="col-12 col-sm-6 col-md-4 col-lg-2" style="width: 250px">
-    <app-characters-list-item-preview [character]="character" />
+<div class="container">
+  @if(characters$()){
+  <div class="row g-4" style="display: flex; flex-wrap: wrap;">
+    @for(character of characters$(); track character){
+    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <app-characters-list-item-preview [character]="character" />
+    </div>
+    }
+    @empty {
+    Lista vazia
+    }
   </div>
   }
-  @empty {
-  Lista vazia
-  }
 </div>
-}
 
 @if(pagesTotal() > 1){
 <button (click)="previousPage()" [disabled]="pagesCount() == 1">Anterior</button>
