@@ -13,6 +13,7 @@ export class CharactersService {
 
   #url: string = "https://rickandmortyapi.com/api/character";
   #http = inject(HttpClient);
+  #totalPages$ = new BehaviorSubject<number>(0);
 
   public getCharacters$(params: any): Observable<any> {
     return this.#http.get<any>(this.#url, { params })

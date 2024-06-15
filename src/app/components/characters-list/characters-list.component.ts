@@ -1,4 +1,4 @@
-import { Component, OnInit, computed, effect, inject, signal } from '@angular/core';
+import { Component, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CharactersService } from '@services/characters.service';
@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './characters-list.component.scss'
 })
 
-export default class CharactersListComponent implements OnInit {
+export default class CharactersListComponent implements OnInit, OnDestroy {
   searchQuery$ = new BehaviorSubject<string>('');
   params = {} as any;
   pagesCount = signal(1);
@@ -43,7 +43,6 @@ export default class CharactersListComponent implements OnInit {
       error: (error: any) => {
         console.log(error);
       },
-      complete() { },
     })
   }
 
@@ -53,20 +52,9 @@ export default class CharactersListComponent implements OnInit {
   //   this.searchCharacters();
   // }
 
-  previousPage() {
-    if (this.pagesCount() != 1) {
-      //this.params.page -= 1;
-      this.pagesCount.update(val => val - 1);
-      this.searchCharacters();
-    }
-  }
 
-  nextPage() {
-    if (this.pagesCount() != this.pagesTotal()) {
-      //this.params.page += 1;
-      this.pagesCount.update(val => val + 1);
-      this.searchCharacters();
-    }
+
+  ngOnDestroy(): void {
   }
 
 

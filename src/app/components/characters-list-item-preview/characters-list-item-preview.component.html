@@ -1,4 +1,4 @@
 <img [ngSrc]="character?.image" loading="lazy" fill style="object-fit: contain; height: auto; position: static;">
-{{ character.name }}
-{{ character.species }}
+<strong>{{ character.name }}</strong><br>
+{{ character.species }}<br>
 <button (click)="addToFavorites()">Favoritar</button>

@@ -1,4 +1,5 @@
-<input type="text" [(ngModel)]="params.name" (keydown)="searchCharacters()" />
+<input type="text" [(ngModel)]="params.name" (change)="params.species = params.name" (keyup)="searchCharacters()"
+  placeholder="Procure por nome ou espécie" />
 
 @if(characters$()){
 <div class="row" style="display: flex; flex-wrap: wrap;">
@@ -13,6 +14,8 @@
 </div>
 }
 
-{{ pagesCount() }} / {{ pagesTotal() }}
+@if(pagesTotal() > 1){
 <button (click)="previousPage()" [disabled]="pagesCount() == 1">Anterior</button>
+{{ pagesCount() }} / {{ pagesTotal() }}
 <button (click)="nextPage()" [disabled]="pagesCount() == pagesTotal()">Próxima</button>
+}
