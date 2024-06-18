@@ -9,13 +9,24 @@ import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { Character } from 'app/core/models/character';
 import { FormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EmptyListComponent } from '@shared/empty-list/empty-list.component';
 
 @Component({
   selector: 'app-characters-list',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CharactersListItemPreviewComponent, ReactiveFormsModule, AsyncPipe, FormsModule],
+  imports: [
+    AsyncPipe,
+    CharactersListItemPreviewComponent,
+    EmptyListComponent,
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterLink,
+    RouterLinkActive,
+  ],
   templateUrl: './characters-list.component.html',
-  styleUrl: './characters-list.component.scss'
+  styleUrl: './characters-list.component.scss',
 })
 
 export default class CharactersListComponent implements OnInit, OnDestroy {
@@ -23,15 +34,17 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
   params = {} as any;
   pagesCount = signal(1);
   pagesTotal = signal(0);
+  errorNotFound = signal(false);
 
   #charactersService = inject(CharactersService);
-  //characters$ = toSignal(this.#charactersService.getCharacters$(this.params));
   characters$ = signal([]);
+  favoritesCharacters$ = this.#charactersService.getFavoriteCharacters$();
 
   ngOnInit(): void {
     this.params.page = 1;
     this.searchCharacters();
   }
+
 
   searchCharacters() {
     this.params.page = this.pagesCount();
@@ -39,22 +52,20 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
       next: (res: any) => {
         this.pagesTotal.set(res.info.pages);
         this.characters$ = signal(res.results);
+        this.errorNotFound.set(false);
       },
       error: (error: any) => {
-        console.log(error);
+        this.errorNotFound.set(true);
       },
     })
   }
 
-  // loadCharacters() {
-  //   this.pagesCount.update(val => val + 1);
-  //   console.log(this.pagesCount());
-  //   this.searchCharacters();
-  // }
+  getFavoriteCharacters() {
+    this.#charactersService.getFavoriteCharacters$();
+  }
 
   previousPage() {
     if (this.pagesCount() != 1) {
-      //this.params.page -= 1;
       this.pagesCount.update(val => val - 1);
       this.searchCharacters();
     }
@@ -62,13 +73,13 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
 
   nextPage() {
     if (this.pagesCount() != this.pagesTotal()) {
-      //this.params.page += 1;
       this.pagesCount.update(val => val + 1);
       this.searchCharacters();
     }
   }
 
   ngOnDestroy(): void {
+
   }
 
 

@@ -1,0 +1,27 @@
+.custom-scrollbar{
+	/* width */
+	&::-webkit-scrollbar{
+		padding: 1px;
+    transition: all 5s;
+    visibility: visible;
+    width: 10px;
+	}
+
+
+	/* Track */
+	&::-webkit-scrollbar-track {
+		background: #DDD;
+		background: rgba(134,146,158,.1);
+		border-radius: 5px;
+		transition: all 5s;
+		visibility: visible;
+	}
+
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		background: rgba(134,146,158,1);
+		border-radius: 5px;
+		transition: all 5s;
+		visibility: visible;
+	}
+}

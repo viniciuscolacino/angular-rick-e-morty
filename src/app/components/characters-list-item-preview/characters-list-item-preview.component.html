@@ -1,12 +1,25 @@
 <div class="character-list-item-preview">
-  <div class="fav-container" (click)="addToFavorites()">
+
+  @if(character.fav){
+  <div class="fav-container" (click)="removeFavorite(character)">
+    <fa-icon [icon]="['fas', 'heart']" style="color: #bfde42;"></fa-icon>
+  </div>
+  }
+
+  @else{
+  <div class="fav-container" (click)="addFavorite(character)">
     <fa-icon [icon]="['far', 'heart']"></fa-icon>
   </div>
+  }
 
   <div class="image-container">
     <img [ngSrc]="character?.image" loading="lazy" fill style="object-fit: contain; height: auto; position: static;">
   </div>
 
-  <strong class="creepster-regular">{{ character.name }}</strong><br>
-  {{ character.species }}<br>
+  <div class="info-container">
+    <strong class="creepster-regular title" [title]="character.name">{{ character.name }}</strong>
+    <fa-icon [icon]="['fas', 'dna']"></fa-icon> {{ character.species }}<br>
+
+    <button (click)="openModal(character)">Detalhes</button>
+  </div>
 </div>

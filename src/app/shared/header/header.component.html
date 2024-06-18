@@ -1,0 +1,31 @@
+<header>
+  <div class="container-fluid">
+    <div class="row w-100 justify-content-center">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-3">
+        <img src="assets/img/rick-and-morty-logo.svg" class="logo">
+      </div>
+
+      <div class="col-12 col-lg-5 d-flex align-items-center justify-content-center">
+        <app-nav>
+          <button type="button" class="app-nav-btn" routerLinkActive="active"><fa-icon
+              [icon]="['fas', 'palette']"></fa-icon>Default</button>
+          <button type="button" class="app-nav-btn" routerLinkActive="active"><fa-icon
+              [icon]="['fas', 'sun']"></fa-icon>Light</button>
+          <button type="button" class="app-nav-btn" routerLinkActive="active"><fa-icon
+              [icon]="['fas', 'moon']"></fa-icon>Dark</button>
+        </app-nav>
+      </div>
+
+      <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-end">
+        <app-nav>
+          <button type="button" class="btn btn-primary" [routerLink]="['/']" routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"><fa-icon [icon]="['fas', 'home']"></fa-icon>Home</button>
+          <button type="button" class="btn btn-primary" [routerLink]="['/favoritos']" routerLinkActive="active"><fa-icon
+              [icon]="['fas', 'heart']"></fa-icon>Favoritos {{
+            favoritesTotal$ | async }}</button>
+        </app-nav>
+      </div>
+
+    </div>
+  </div>
+</header>

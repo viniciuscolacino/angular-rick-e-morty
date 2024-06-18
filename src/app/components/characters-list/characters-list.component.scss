@@ -1,0 +1,45 @@
+:host{
+  display: flex;
+  flex: auto;
+  margin-bottom: 200px;
+
+  .host-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-container{
+    align-items: center;
+    display: flex;
+    position: relative;
+    width: 100%;
+
+    .ng-fa-icon{
+      color: #666;
+      left: 10px;
+      position: absolute;
+      transition: all .2s;
+      z-index: 1;
+    }
+
+    input{
+      background: none;
+      border: solid 2px #3d3d3d;
+      border-radius: 10px;
+      color: #fff;
+      margin: .5rem 0;
+      padding: .5rem .5rem .5rem 30px;
+
+      &:focus{
+        & +  .ng-fa-icon{
+          color: #FFF;
+          transition: all .2s;
+        }
+      }
+    }
+  }
+
+
+}
+

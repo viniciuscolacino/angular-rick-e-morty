@@ -1,0 +1,24 @@
+<div class="container">
+
+  <div class="row mt-4 mb-4">
+    <div class="col-6 d-flex justify-content-start">
+      <h1 class="creepster-regular">
+        Favoritos
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="row g-4">
+    @for(character of favoritesCharacters$ | async; track character){
+    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <app-characters-list-item-preview [character]="character" />
+    </div>
+    }
+    @empty {
+    <app-empty-list [title]="'Parece que você ainda não tem favoritos'"
+      [info]="'Volte à página inicial e escolha os melhores para você'" />
+    }
+  </div>
+
+</div>

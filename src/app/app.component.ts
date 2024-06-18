@@ -1,13 +1,9 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterOutlet } from '@angular/router';
-import { CharactersService } from '@services/characters.service';
-import { Observable } from 'rxjs';
-import { Character } from './core/models/character';
 import { AsyncPipe, JsonPipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { resolve } from 'path';
-import { HeaderComponent } from '@shared/layout/header/header.component';
+import { HeaderComponent } from '@shared/header/header.component';
+import { FooterComponent } from "./shared/footer/footer.component";
 
 // font awesome
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -17,12 +13,13 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AsyncPipe, CommonModule, HeaderComponent, FontAwesomeModule],
   template: `
     <app-header />
     <router-outlet />
+    <app-footer />
   `,
-  //templateUrl: './app.component.html',
+  imports: [RouterOutlet, AsyncPipe, CommonModule, HeaderComponent, FontAwesomeModule, FooterComponent],
+  host: { 'class': 'app-root' }
 })
 
 export class AppComponent {

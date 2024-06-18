@@ -14,6 +14,7 @@
 
 /* Importing Bootstrap SCSS file. */
 @import url(_global.scss);
+@import url(_scroll.scss);
 
 body{
   background-attachment: scroll;
@@ -31,7 +32,83 @@ body{
   @include media-breakpoint-up(xl) {
     background-attachment: fixed;
     background-size: auto 60%;
-    padding-bottom: 0;
-
   }
+}
+
+body{
+  background-attachment: scroll;
+  background-color: #252525;
+  background-image: url('assets/img/theme-dark/bg-rick-morty-portal.jpg');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: auto 300px;
+  padding-bottom: 200px;
+  padding-bottom: 0;
+  min-height: 100vh;
+}
+
+button{
+  svg{
+    padding-right: .5rem;
+  }
+}
+
+.modal{
+  backdrop-filter: blur(4px);
+  background: rgb(10, 10, 10, .6);
+}
+
+.modal-dialog{
+  max-width: 80vw;
+}
+
+.label{
+  color: #666;
+  display: block;
+  font-size: .85rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+button{
+  background: #bfde42;
+  border: solid 1px #193840;
+  color: #193840;
+  display: block;
+  font-size: .8rem;
+  font-weight: bold;
+  margin-top: .5rem;
+  //margin: auto;
+  padding: 5px 15px;
+  text-transform: uppercase;
+}
+
+
+.app-root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.flex-auto{
+  flex: auto;
+}
+
+
+h1{
+  color: #42b4ca;
+  font-size: 4rem;
+  text-shadow:
+    4px 0 0 #bfde42,
+    0 4px 0 #bfde42,
+    4px 4px 0 #bfde42,
+    4px -4px 0 #bfde42,
+    -4px 4px 0 #bfde42,
+    -4px -4px 0 #bfde42;
+  letter-spacing: .2rem;
+  -webkit-text-stroke: 2px #193840;
 }

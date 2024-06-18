@@ -1,23 +1,65 @@
-<input type="text" [(ngModel)]="params.name" (change)="params.species = params.name" (keyup)="searchCharacters()"
-  placeholder="Procure por nome ou espécie" />
+<div class="host-container">
+  <div class="container flex-auto d-flex flex-column">
 
-<div class="container">
-  @if(characters$()){
-  <div class="row g-4" style="display: flex; flex-wrap: wrap;">
-    @for(character of characters$(); track character){
-    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-      <app-characters-list-item-preview [character]="character" />
+    <div class="row mt-4 mb-4">
+      <div class="col-12 col-md-4 col-lg-6 d-flex justify-content-start">
+        <h1 class="creepster-regular">
+          Início
+        </h1>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
+        <div class="search-container">
+          <input type="text" [(ngModel)]="params.name" (keyup)="searchCharacters()" placeholder="Procure por nome"
+            class="w-100" />
+          <fa-icon [icon]="['fas', 'id-card']"></fa-icon>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
+        <div class="search-container">
+          <input type="text" [(ngModel)]="params.species" (keyup)="searchCharacters()" placeholder="Procure por espécie"
+            class="w-100" />
+          <fa-icon [icon]="['fas', 'dna']"></fa-icon>
+        </div>
+      </div>
+    </div>
+
+    @if(errorNotFound()){
+    <app-empty-list [title]="'Nada foi encontrado'" [info]="'Tente realizar uma nova busca'" />
+    }
+
+    @if(characters$() && !errorNotFound()){
+    <div class="row g-4">
+      @for(character of characters$(); track character){
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+        <app-characters-list-item-preview [character]="character" />
+      </div>
+      }
+      @empty {
+      Carregando...
+      }
     </div>
     }
-    @empty {
-    Lista vazia
-    }
+  </div>
+
+  @if(characters$() && !errorNotFound()){
+  <div class="container">
+    <div class="row">
+      @if(pagesTotal() > 1){
+      <div class="col-3 d-flex justify-content-start">
+        <button (click)="previousPage()" [disabled]="pagesCount() == 1">Anterior</button>
+      </div>
+
+      <div class="col-6 d-flex justify-content-center">
+        {{ pagesCount() }} / {{ pagesTotal() }}
+      </div>
+
+      <div class="col-3 d-flex justify-content-end">
+        <button (click)="nextPage()" [disabled]="pagesCount() == pagesTotal()">Próxima</button>
+      </div>
+      }
+    </div>
   </div>
   }
 </div>
-
-@if(pagesTotal() > 1){
-<button (click)="previousPage()" [disabled]="pagesCount() == 1">Anterior</button>
-{{ pagesCount() }} / {{ pagesTotal() }}
-<button (click)="nextPage()" [disabled]="pagesCount() == pagesTotal()">Próxima</button>
-}

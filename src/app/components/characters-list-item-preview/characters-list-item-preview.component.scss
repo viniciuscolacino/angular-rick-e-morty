@@ -1,8 +1,16 @@
 :host{
+  display: block;
+  height: 100%;
+
   .character-list-item-preview{
     backdrop-filter: blur(5px);
     background: rgb(10, 10, 10, .8);
     border-radius: 10px;
+    border: solid 2px #3D3D3D;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     overflow: hidden;
     position: relative;
 
@@ -12,13 +20,23 @@
       img{
         filter: grayscale(.5);
         transition: all .2s;
-
-        &:hover{
-          filter: grayscale(0);
-          transform: scale(1.2) rotate(5deg);
-          transition: all .2s;
-        }
       }
+    }
+
+
+    .info-container{
+      flex: auto;
+      padding: .5rem 1rem 1rem;
+    }
+
+
+    .title{
+      display: block;
+      font-size: 1.6rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
     }
 
     .fav-container{
@@ -43,6 +61,19 @@
         background: rgba(255, 255, 255, .5);
         color: #333;
         transition: all .2s;
+      }
+    }
+
+    &:hover{
+      border-color: #bfde42;
+      box-shadow: 0 0 8px #bfde42;
+
+      .image-container{
+        img{
+          filter: grayscale(0);
+          transform: scale(1.1) rotate(3deg);
+          transition: all .2s;
+        }
       }
     }
   }
