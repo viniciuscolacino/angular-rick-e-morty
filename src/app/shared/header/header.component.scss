@@ -1,10 +1,14 @@
+@import url(../../styles/themes/light-theme.scss);
+@import url(../../styles/themes/dark-theme.scss);
+
 :host{
   header{
-    background: #0a0a0a;
-    border-bottom: solid 2px #3D3D3D;
+    background: var(--header-background-color);
+    border-bottom: solid 2px var(--default-border-color);
     padding: 1rem 0;
 
     .logo{
+      max-width: 250px;
       width: 100%;
     }
   }

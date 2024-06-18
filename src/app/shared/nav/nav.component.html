@@ -1,3 +1,9 @@
-<div class="btn-group1" role="group">
-  <ng-content></ng-content>
+<div class="d-flex" role="group">
+  <button type="button" class="nav-button" [routerLink]="['/']" routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"><fa-icon [icon]="['fas', 'home']"></fa-icon>Home</button>
+
+  <button type="button" class="nav-button" [routerLink]="['/favoritos']" routerLinkActive="active">
+    <fa-icon [icon]="['fas', 'heart']"></fa-icon>Favoritos
+    <span class="badge" [ngClass]="{'empty': favoritesTotal$() == 0 }">{{ favoritesTotal$() }}</span>
+  </button>
 </div>

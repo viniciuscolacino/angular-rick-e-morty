@@ -13,84 +13,75 @@
   --color-logo--blue-900: #234756;
   --color-logo--blue-950: #122e3a;
 
+  // verde do logo
+  --color-logo--50: #fbfde8;
+  --color-logo--100: #f3facd;
+  --color-logo--200: #e7f4a2;
+  --color-logo--300: #d3eb6b;
+  --color-logo--400: #bfde42; // borda do logo
+  --color-logo--500: #9fc31f; // cor do alive
+  --color-logo--600: #7c9c14;
+  --color-logo--700: #5e7714;
+  --color-logo--800: #4c5e16;
+  --color-logo--900: #405017;
+  --color-logo--950: #212c07;
 
-// verde do logo
-'fuego': {
-'50': '#fbfde8',
-'100': '#f3facd',
-'200': '#e7f4a2',
-'300': '#d3eb6b',
-'400': '#bfde42', // borda do logo
-'500': '#9fc31f', // cor do alive
-'600': '#7c9c14',
-'700': '#5e7714',
-'800': '#4c5e16',
-'900': '#405017',
-'950': '#212c07',
-},
-
-// contorno da font
-'firefly': {
-'50': '#f0fbfb',
-'100': '#d9f3f4',
-'200': '#b8e8e9',
-'300': '#87d5d9',
-'400': '#4fbbc1',
-'500': '#349fa6',
-'600': '#2e818c',
-'700': '#2b6a73',
-'800': '#2a5760',
-'900': '#274952',
-'950': '#193840', //
-},
-
-// cinza fudndo
-'shark': {
-  '50': '#f6f6f6',
-  '100': '#e7e7e7',
-  '200': '#d1d1d1',
-  '300': '#b0b0b0',
-  '400': '#888888',
-  '500': '#6d6d6d',
-  '600': '#5d5d5d',
-  '700': '#4f4f4f',
-  '800': '#454545',
-  '900': '#3d3d3d', // borda
-  '950': '#1f1f1f', // fundo
-},
-
-preto do fundo: 0a0a0a
-
-// desativado
-'star-dust': {
-  '50': '#f7f7f7',
-  '100': '#ededed',
-  '200': '#dfdfdf',
-  '300': '#c8c8c8',
-  '400': '#a4a4a4', //
-  '500': '#999999',
-  '600': '#888888',
-  '700': '#7b7b7b',
-  '800': '#676767',
-  '900': '#545454',
-  '950': '#363636',
-},
+  // contorno da font
+  --color-logo-border--dark-blue-50: #f0fbfb;
+  --color-logo-border--dark-blue-100: #d9f3f4;
+  --color-logo-border--dark-blue-200: #b8e8e9;
+  --color-logo-border--dark-blue-300: #87d5d9;
+  --color-logo-border--dark-blue-400: #4fbbc1;
+  --color-logo-border--dark-blue-500: #349fa6;
+  --color-logo-border--dark-blue-600: #2e818c;
+  --color-logo-border--dark-blue-700: #2b6a73;
+  --color-logo-border--dark-blue-800: #2a5760;
+  --color-logo-border--dark-blue-900: #274952;
+  --color-logo-border--dark-blue-950: #193840; // cor da borda
 
 
-// vermelho - rosa
-'razzmatazz': {
-  '50': '#fff0f3',
-  '100': '#ffe2e8',
-  '200': '#ffcad8',
-  '300': '#ff9eb8',
-  '400': '#ff6893',
-  '500': '#ff3371',
-  '600': '#dd0f57', // cor do dead
-  '700': '#c9074f',
-  '800': '#a8094a',
-  '900': '#900b45',
-  '950': '#510022',
-},
+  // cinza fundo
+  --color-grey-50: #f6f6f6;
+  --color-grey-100: #e7e7e7;
+  --color-grey-200: #d1d1d1;
+  --color-grey-300: #b0b0b0;
+  --color-grey-400: #888888;
+  --color-grey-500: #6d6d6d;
+  --color-grey-600: #5d5d5d;
+  --color-grey-700: #4f4f4f;
+  --color-grey-800: #454545;
+  --color-grey-900: #3d3d3d; // borda
+  --color-grey-950: #252525; // fundo
+
+  //red
+  --color-red-50: #fff1f1;
+  --color-red-100: #ffe1e1;
+  --color-red-200: #ffc9c8;
+  --color-red-300: #ffa2a1;
+  --color-red-400: #fe6d6b;
+  --color-red-500: #f73e3c;
+  --color-red-600: #d61b19; // status dead
+  --color-red-700: #c01715;
+  --color-red-800: #9f1615;
+  --color-red-900: #841918;
+  --color-red-950: #480807;
+
+  // orange
+  --color-orange-50: #fdf7ed;
+  --color-orange-100: #f9e7cc;
+  --color-orange-200: #f2cc95;
+  --color-orange-300: #ebad5e;
+  --color-orange-400: #e69339;
+  --color-orange-500: #d66d20;
+  --color-orange-600: #c4531b;
+  --color-orange-700: #a3391a;
+  --color-orange-800: #852d1b;
+  --color-orange-900: #6e2719;
+  --color-orange-950: #3f1109;
+
+
+  --color-white: #FFF;
+  --color-black: #000;
 
 
 }

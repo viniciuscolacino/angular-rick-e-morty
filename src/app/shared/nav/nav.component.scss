@@ -1,13 +1,47 @@
 :host{
-  //.btn-group{
-    .app-nav-btn{
-      background: none;
-      border-color: #3D3D3D;
-      color: #888;
+    .nav-button{
+      align-items: center;
+      background: var(--menu-nav-item-background-color);
+      border-color: var(--default-border-color);
+      color: var(--menu-nav-item-color);
+      display: inline-flex;
+      white-space: nowrap;
+
+      .badge{
+        align-items: center;
+        aspect-ratio: 1;
+        background: #FFF;
+        border-radius: 100%;
+        border: solid 1px var(--default-border-color);
+        color: #3D3D3D;
+        display: inline-flex;
+        font-weight: bold;
+        justify-content: center;
+        margin-left: 5px;
+        width: 20px;
+
+        &.empty{
+          background: none;
+          border: solid 1px #FFF;
+          color: #FFF;
+        }
+      }
 
       &.active{
-        background: #FFF;
-        color: #111;
+        background: var(--menu-nav-item-active-background-color);
+        color: var(--menu-nav-item-active-color);
+
+        .badge{
+          background: #333;
+          border: solid 1px #333;
+          color: #FFF;
+
+          &.empty{
+            background: none;
+            border: solid 1px #333;
+            color: #333;
+          }
+        }
       }
 
       &:first-child{
@@ -18,5 +52,6 @@
         border-radius: 0 10px 10px 0;
       }
     }
-  //}
+
+
 }

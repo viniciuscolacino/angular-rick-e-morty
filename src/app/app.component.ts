@@ -4,6 +4,7 @@ import { AsyncPipe, JsonPipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '@shared/header/header.component';
 import { FooterComponent } from "./shared/footer/footer.component";
+import { MatIconRegistry } from '@angular/material/icon';
 
 // font awesome
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
@@ -22,10 +23,17 @@ import { far } from '@fortawesome/free-regular-svg-icons';
   host: { 'class': 'app-root' }
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Rick-e-Morty';
 
-  constructor(library: FaIconLibrary) {
+  constructor(
+    library: FaIconLibrary,
+    private readonly iconRegistry: MatIconRegistry
+  ) {
     library.addIconPacks(fas, far);
+  }
+
+  ngOnInit(): void {
+    this.iconRegistry.setDefaultFontSetClass('material-symbols-outlined');
   }
 }

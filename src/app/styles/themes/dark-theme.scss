@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+@import 'bootstrap/scss/bootstrap';
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette(mat.$pink-palette),
+    accent: mat.define-palette(mat.$blue-grey-palette),
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+body.dark-theme{
+  --default-border-color: var(--color-grey-600);
+  --header-background-color: var(--color-black);
+
+  background-attachment: scroll;
+  background-color: #252525;
+  background-image: url('../../../assets/img/theme-dark/bg-rick-morty-portal.jpg');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: auto 300px;
+  padding-bottom: 0;
+  min-height: 100vh;
+  transition: all .2s;
+}

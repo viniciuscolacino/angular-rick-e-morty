@@ -9,14 +9,29 @@
       </div>
 
       <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
+        <!-- <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Procure por nome</mat-label>
+          <input matInput placeholder="Exemplo: Morty Smith" [(ngModel)]="params.name" (keyup)="searchCharacters()">
+          <mat-icon matPrefix>badge</mat-icon>
+          <mat-hint>Exemplo: "Morty Smith"</mat-hint>
+        </mat-form-field> -->
+
         <div class="search-container">
           <input type="text" [(ngModel)]="params.name" (keyup)="searchCharacters()" placeholder="Procure por nome"
             class="w-100" />
           <fa-icon [icon]="['fas', 'id-card']"></fa-icon>
         </div>
+
       </div>
 
       <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
+        <!-- <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Procure por espécie</mat-label>
+          <input matInput placeholder="Exemplo: Morty Smith" [(ngModel)]="params.species" (keyup)="searchCharacters()">
+          <mat-icon matPrefix>genetics</mat-icon>
+          <mat-hint>Exemplo: "Alien"</mat-hint>
+        </mat-form-field> -->
+
         <div class="search-container">
           <input type="text" [(ngModel)]="params.species" (keyup)="searchCharacters()" placeholder="Procure por espécie"
             class="w-100" />
@@ -44,7 +59,7 @@
   </div>
 
   @if(characters$() && !errorNotFound()){
-  <div class="container">
+  <div class="container mt-5">
     <div class="row">
       @if(pagesTotal() > 1){
       <div class="col-3 d-flex justify-content-start">

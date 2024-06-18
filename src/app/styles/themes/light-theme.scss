@@ -1,0 +1,41 @@
+@use '@angular/material' as mat;
+@import 'bootstrap/scss/bootstrap';
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(mat.$indigo-palette),
+    accent: mat.define-palette(mat.$pink-palette),
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+body.light-theme{
+  --default-border-color: var(--color-grey-900);
+  --header-background-color: var(--color-grey-100);
+
+  --menu-nav-item-background-color: transparent;
+  --menu-nav-item-color: var(--color-grey-400: #888888;);
+  --menu-nav-item-active-background-color: var(--color-logo--blue-400);
+  --menu-nav-item-active-color: var(--color-white);
+
+  background-attachment: scroll;
+  background-image: url('../../../assets/img/theme-light/bg-rick.jpg'), url('../../../assets/img/theme-light/bg-morty.jpg');
+  background-position: left 10px bottom, right 10px bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto 300px;
+  padding-bottom: 0;
+  min-height: 100vh;
+  transition: all .2s;
+
+  @include media-breakpoint-up(lg) {
+    background-attachment: fixed;
+    background-size: auto 50%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    background-attachment: fixed;
+    background-size: auto 60%;
+  }
+
+}

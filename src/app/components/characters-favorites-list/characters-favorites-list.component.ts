@@ -5,6 +5,8 @@ import { AsyncPipe } from '@angular/common';
 import { EmptyListComponent } from '@shared/empty-list/empty-list.component';
 import { NgClass } from '@angular/common';
 import { JsonPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-characters-favorites-list',
@@ -13,8 +15,10 @@ import { JsonPipe } from '@angular/common';
     AsyncPipe,
     CharactersListItemPreviewComponent,
     EmptyListComponent,
+    FontAwesomeModule,
+    JsonPipe,
     NgClass,
-    JsonPipe
+    RouterLink,
   ],
   templateUrl: './characters-favorites-list.component.html',
   styleUrl: './characters-favorites-list.component.scss',

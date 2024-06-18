@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CharactersService } from '@services/characters.service';
@@ -6,11 +6,13 @@ import { CharactersListItemPreviewComponent } from '@components/characters-list-
 import { FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, DOCUMENT } from '@angular/common';
 import { Character } from 'app/core/models/character';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmptyListComponent } from '@shared/empty-list/empty-list.component';
+import { MatInput, MatLabel, MatFormField, MatSuffix, MatPrefix, MatHint } from '@angular/material/input'
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-characters-list',
@@ -21,6 +23,13 @@ import { EmptyListComponent } from '@shared/empty-list/empty-list.component';
     EmptyListComponent,
     FontAwesomeModule,
     FormsModule,
+    MatFormField,
+    MatHint,
+    MatInput,
+    MatLabel,
+    MatPrefix,
+    MatSuffix,
+    MatIconModule,
     ReactiveFormsModule,
     RouterLink,
     RouterLinkActive,
@@ -44,7 +53,6 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
     this.params.page = 1;
     this.searchCharacters();
   }
-
 
   searchCharacters() {
     this.params.page = this.pagesCount();
