@@ -34,13 +34,31 @@ body.dark-theme{
 
   --character-list-item-preview-background-color: rgb(10, 10, 10, .8);
 
+  --character-list-item-icon-status-alive-color: var(--color-logo--500);
+  --character-list-item-icon-status-dead-color: var(--color-red-600);
+  --character-list-item-icon-genre-male-color: #039df6;
+  --character-list-item-icon-genre-female-color: #e749a3;
+
   background-attachment: scroll;
   background-color: #252525;
   background-image: url('../../../assets/img/theme-dark/bg-rick-morty-portal.jpg');
   background-position: right bottom;
   background-repeat: no-repeat;
-  background-size: auto 300px;
+  background-size: contain;
   padding-bottom: 0;
   min-height: 100vh;
   transition: all .2s;
+
+  @include media-breakpoint-up(lg) {
+    background-size: auto 300px;
+  }
+
+  .mat-mdc-dialog-surface.mdc-dialog__surface{
+    backdrop-filter: blur(1px) !important;
+    background-color: transparent !important;
+    background-image: linear-gradient(120deg, rgba(20, 20, 20, .8), rgba(45, 45, 45, .8)) !important;
+    box-shadow: 0 0 10px var(--default-border-color) !important;
+    color: var(--default-font-color);
+    padding: 20px;
+  }
 }

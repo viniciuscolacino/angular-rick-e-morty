@@ -5,7 +5,7 @@ import { CharactersService } from '@services/characters.service';
 import { CharactersListItemPreviewComponent } from '@components/characters-list-item-preview/characters-list-item-preview.component';
 import { FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BehaviorSubject, Observable, combineLatest, map } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, combineLatest, map } from 'rxjs';
 import { AsyncPipe, DOCUMENT } from '@angular/common';
 import { Character } from 'app/core/models/character';
 import { FormsModule } from '@angular/forms';
@@ -48,6 +48,7 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
   #charactersService = inject(CharactersService);
   characters$ = signal([]);
   favoritesCharacters$ = this.#charactersService.getFavoriteCharacters$();
+  characterSubscription = new Subscription();
 
   ngOnInit(): void {
     this.params.page = 1;
@@ -56,7 +57,7 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
 
   searchCharacters() {
     this.params.page = this.pagesCount();
-    this.#charactersService.getCharacters$(this.params).subscribe({
+    const sub = this.#charactersService.getCharacters$(this.params).subscribe({
       next: (res: any) => {
         this.pagesTotal.set(res.info.pages);
         this.characters$ = signal(res.results);
@@ -66,6 +67,8 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
         this.errorNotFound.set(true);
       },
     })
+
+    this.characterSubscription.add(sub);
   }
 
   getFavoriteCharacters() {
@@ -87,7 +90,7 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-
+    this.characterSubscription.unsubscribe();
   }
 
 

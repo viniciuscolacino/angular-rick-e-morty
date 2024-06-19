@@ -41,7 +41,10 @@
     </div>
 
     @if(errorNotFound()){
-    <app-empty-list [title]="'Nada foi encontrado'" [info]="'Tente realizar uma nova busca'" />
+    <app-empty-list>
+      <h2>Nada foi encontrado</h2>
+      <p>Tente realizar uma nova busca</p>
+    </app-empty-list>
     }
 
     @if(characters$() && !errorNotFound()){

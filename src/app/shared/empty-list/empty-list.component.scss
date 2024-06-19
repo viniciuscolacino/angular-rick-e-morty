@@ -1,9 +1,9 @@
 :host{
   align-items: center;
-  background: #010101;
+  background: var(--default-font-color-negative);
   border-radius: 10px;
-  border: solid 2px #3D3D3D;
-  color: #FFF;
+  border: solid 2px var(--default-border-color);
+  color: var(--default-font-color);
   display: flex;
   flex: auto;
   justify-content: center;

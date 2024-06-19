@@ -5,32 +5,34 @@
   </div>
 
   <div class="col-4">
-    <h1>{{data.name}}</h1>
+    <h1 class="smaller">{{data.name}}</h1>
 
     <label class="label">Criado em</label>
-    <fa-icon [icon]="['fas', 'calendar-days']"></fa-icon> {{data.created | date : 'dd/MM/yyyy'}}<br>
+    <fa-icon [icon]="['fas', 'calendar-days']" class="icon-calendar"></fa-icon> {{data.created | date :
+    'dd/MM/yyyy'}}<br>
 
     <label class="label">Espécie</label>
-    <fa-icon [icon]="['fas', 'dna']"></fa-icon> {{ data.species }}<br>
+    <fa-icon [icon]="['fas', 'dna']" class="icon-dna"></fa-icon> {{ data.species }}<br>
 
     <label class="label">Status</label>
     <fa-icon [icon]="['fas', 'circle']"
-      [class]="{'status-alive' : data.status ==='Alive', 'status-dead' : data.status ==='Dead'}"></fa-icon> {{
+      [class]="{'icon-status-alive' : data.status ==='Alive', 'icon-status-dead' : data.status ==='Dead'}"
+      class="icon-status"></fa-icon> {{
     data.status }}<br>
 
     <label class="label">Gênero</label>
     @if(data.gender === 'Male'){
-    <fa-icon [icon]="['fas', 'mars']" style="color: #00F"></fa-icon> {{ data.gender }}<br>
+    <fa-icon [icon]="['fas', 'mars']" class="icon-gender icon-gender-male"></fa-icon> {{ data.gender }}<br>
     }
     @else if(data.gender === 'Female'){
-    <fa-icon [icon]="['fas', 'venus']" style="color: #F0F"></fa-icon> {{ data.gender }}<br>
+    <fa-icon [icon]="['fas', 'venus']" class="icon-gender icon-gender-female"></fa-icon> {{ data.gender }}<br>
     }
     @else{
-    <fa-icon [icon]="['fas', 'venus-mars']" style="color: #666"></fa-icon> {{ data.gender }}<br>
+    <fa-icon [icon]="['fas', 'venus-mars']" class="icon-gender icon-gender-unknow"></fa-icon> {{ data.gender }}<br>
     }
 
     <label class="label">Última localização conhecida</label>
-    <fa-icon [icon]="['fas', 'location-pin']"></fa-icon> {{ data.location.name }}<br>
+    <fa-icon [icon]="['fas', 'location-pin']" class="icon-location"></fa-icon> {{ data.location.name }}<br>
   </div>
 
 

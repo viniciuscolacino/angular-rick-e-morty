@@ -14,10 +14,10 @@
       .badge{
         align-items: center;
         aspect-ratio: 1;
-        background: #FFF;
+        background: var(--default-font-color-negative);
         border-radius: 100%;
         border: solid 1px var(--default-border-color);
-        color: #3D3D3D;
+        color: var(--default-font-color);
         display: inline-flex;
         font-weight: bold;
         justify-content: center;
@@ -26,8 +26,8 @@
 
         &.empty{
           background: none;
-          border: solid 1px #FFF;
-          color: #FFF;
+          border: solid 1px var(--default-font-color);
+          color: var(--default-font-color);
         }
       }
 
@@ -36,14 +36,14 @@
         color: var(--menu-nav-item-active-color);
 
         .badge{
-          background: #333;
-          border: solid 1px #333;
-          color: #FFF;
+          background: var(--default-font-color);
+          border: solid 1px var(--default-font-color-negative);
+          color: var(--default-font-color-negative);
 
           &.empty{
             background: none;
-            border: solid 1px #333;
-            color: #333;
+            border: solid 1px var(--default-font-color-negative);
+            color: var(--default-font-color-negative);
           }
         }
       }

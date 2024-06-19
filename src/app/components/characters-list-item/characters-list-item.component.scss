@@ -1,0 +1,18 @@
+:host{
+  .icon-calendar{color: var(--default-main-color)}
+  .icon-dna{color: var(--default-main-color)}
+  .icon-status{
+    &.icon-gender-unknow{color: var(--default-border-color)}
+    &.icon-status-alive{color: var(--character-list-item-icon-status-alive-color)}
+    &.icon-status-dead{color: var(--character-list-item-icon-status-dead-color)}
+  };
+  .icon-gender{
+    &.icon-gender-unknow{color: var(--default-border-color)}
+    &.icon-gender-male{color: var(--character-list-item-icon-genre-male-color)}
+    &.icon-gender-female{color: var(--character-list-item-icon-genre-female-color)}
+  }
+  .icon-location{
+    color: var(--default-main-color)
+  }
+}
+

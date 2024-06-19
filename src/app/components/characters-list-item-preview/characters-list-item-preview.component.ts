@@ -4,7 +4,6 @@ import { NgOptimizedImage } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Character } from 'app/core/models/character';
 import { ModalDismissReasons, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
-import { ModalComponent } from '@shared/modal/modal.component';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { CharactersListItemComponent } from '@components/characters-list-item/characters-list-item.component';
 import {
@@ -20,7 +19,7 @@ import {
 @Component({
   selector: 'app-characters-list-item-preview',
   standalone: true,
-  imports: [NgOptimizedImage, FontAwesomeModule, ModalComponent, CharactersListItemComponent],
+  imports: [NgOptimizedImage, FontAwesomeModule, CharactersListItemComponent],
   templateUrl: './characters-list-item-preview.component.html',
   styleUrl: './characters-list-item-preview.component.scss',
   animations: [
@@ -80,25 +79,6 @@ export class CharactersListItemPreviewComponent {
     const dialogRef = this.dialog.open(CharactersListItemComponent, {
       data: character,
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result !== undefined) {
-        //this.animal.set(result);
-      }
-    });
   }
-
-  private opcoesModal: NgbModalOptions = {
-    backdrop: 'static',
-    centered: true,
-    backdropClass: 'backdrop-modal',
-  }
-
-
-  openModal(character: Character) {
-    const modal = this.#modalService.open(ModalComponent);
-    modal.componentInstance.data = character;
-  }
-
 
 }
