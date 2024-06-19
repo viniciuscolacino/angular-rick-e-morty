@@ -4,12 +4,12 @@ export const routes: Routes = [
   {
     path: '',
     title: 'Rick e Morty',
-    loadComponent: () => import('@components/characters-list/characters-list.component'),
+    loadComponent: () => import('@pages/characters-list-page/characters-list-page.component'),
   },
 
   {
     path: 'favoritos',
     title: 'Favoritos',
-    loadComponent: () => import('@components/characters-favorites-list/characters-favorites-list.component'),
+    loadComponent: () => import('@pages/characters-favorites-list-page/characters-favorites-list-page.component'),
   }
 ];
