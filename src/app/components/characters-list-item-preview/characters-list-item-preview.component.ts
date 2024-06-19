@@ -6,11 +6,21 @@ import { Character } from 'app/core/models/character';
 import { ModalDismissReasons, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from '@shared/modal/modal.component';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { CharactersListItemComponent } from '@components/characters-list-item/characters-list-item.component';
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle,
+} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-characters-list-item-preview',
   standalone: true,
-  imports: [NgOptimizedImage, FontAwesomeModule, ModalComponent],
+  imports: [NgOptimizedImage, FontAwesomeModule, ModalComponent, CharactersListItemComponent],
   templateUrl: './characters-list-item-preview.component.html',
   styleUrl: './characters-list-item-preview.component.scss',
   animations: [
@@ -52,6 +62,7 @@ export class CharactersListItemPreviewComponent {
   #charactersService = inject(CharactersService);
   #modalService = inject(NgbModal);
   public animateFavorite = signal('');
+  readonly dialog = inject(MatDialog)
 
   public addFavorite(character: Character): void {
     this.#charactersService.addFavorite(character);
@@ -61,6 +72,20 @@ export class CharactersListItemPreviewComponent {
   public removeFavorite(character: Character): void {
     this.#charactersService.removeFavorite(character);
     this.animateFavorite.set('');
+  }
+
+
+  openDialog(character: Character): void {
+    console.log(character);
+    const dialogRef = this.dialog.open(CharactersListItemComponent, {
+      data: character,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result !== undefined) {
+        //this.animal.set(result);
+      }
+    });
   }
 
   private opcoesModal: NgbModalOptions = {

@@ -1,27 +1,34 @@
-# RickEMorty
+# Instalação
+`npm install`
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+# Executar o Projeto
+`ng serve`
 
-## Development server
+# Layout
+Eu sei que o projeto não está exatamente igual ao proposto no Figma: algumas cores mudaram.
+Como o projeto permitia uma autonomia criativa, conversei com o RH sobre minha intenção de caprichar no layout e desenvolver temas (light e dark), e me foi dito que isso não seria um problema.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Title
+Tomei a liberdade de trabalhar um pouco nos títulos (h1); no logo do desenho, tem uma borda azul escuro entre o azul claro da font e o contorno verde. Então consegui reproduzir via CSS esse efeito. Por isso que ficou um pouco diferente do Figma.
 
-## Code scaffolding
+## Responsivo
+O projeto vai se diferenciar do Figma, por conta da responsividade do Bootstrap. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Bootstrap e CSS
+Utilizei como framework css o Bootstrap e aproveitei muito de suas classes (tamanho, espaçamento, etc). Mas achei válido também codificar em CSS, para demonstrar minha proficiência.
+Para melhor organizar, mantenho as propriedades em ordem alfabética.
 
-## Build
+# Modal
+Resolvi criar uma modal para exibir mais informações sobre cada personagem. Como as informações já vem na primeira requisição, eu transfiro esses dados através dos props.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Paginação
+Achei válido criar uma paginação para exibir os personagens; uma nova requisição é feita ao avançar para a próxima página.
 
-## Running unit tests
+# Animações
+Fiz uma pequena animação ao incluir um personagem na lista de favoritos.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Melhorias
+Sei que existe inúmeras possibilidades para implementar ainda, e eu pretendo (independentemente do resultado do meu processo seletivo) continuar a 'lapidar' esse projeto, para deixá-lo como portfólio.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Considerações finais
+Obrigado por analisar meu projeto! Sei que aumentei a complexidade do que foi proposto, mas eu realmente queria trabalhar um pouco mais no projeto, e reafirmar minha vontade de fazer parte do time da Mottu.

@@ -1,1 +1,48 @@
-<p>characters-list-item works!</p>
+<div class="row m-0">
+  <div class="col-4">
+    <img [ngSrc]="data.image" loading="lazy" fill style="object-fit: contain; height: auto; position: static;">
+  </div>
+
+  <div class="col-4">
+    <label class="label">Criado em</label>
+    <fa-icon [icon]="['fas', 'calendar-days']"></fa-icon> {{data.created | date : 'dd/MM/yyyy'}}<br>
+
+    <label class="label">Espécie</label>
+    <fa-icon [icon]="['fas', 'dna']"></fa-icon> {{ data.species }}<br>
+
+    <label class="label">Status</label>
+    <fa-icon [icon]="['fas', 'circle']"
+      [class]="{'status-alive' : data.status ==='Alive', 'status-dead' : data.status ==='Dead'}"></fa-icon> {{
+    data.status }}<br>
+
+    <label class="label">Gênero</label>
+    @if(data.gender === 'Male'){
+    <fa-icon [icon]="['fas', 'mars']" style="color: #00F"></fa-icon> {{ data.gender }}<br>
+    }
+    @else if(data.gender === 'Female'){
+    <fa-icon [icon]="['fas', 'venus']" style="color: #F0F"></fa-icon> {{ data.gender }}<br>
+    }
+    @else{
+    <fa-icon [icon]="['fas', 'venus-mars']" style="color: #666"></fa-icon> {{ data.gender }}<br>
+    }
+
+    <label class="label">Última localização conhecida</label>
+    <fa-icon [icon]="['fas', 'location-pin']"></fa-icon> {{ data.location.name }}<br>
+  </div>
+
+
+  <div class="col-4">
+    <div class="w-100 h-100 position-relative">
+      <div class="overflow-auto position-absolute top-0 bottom-0 start-0 end-0 custom-scrollbar">
+        @if(episodeNumbers){
+        <label class="label">Aparece nos episódios:</label>
+        <ul>
+          @for(eps of episodeNumbers; track eps){
+          <li>{{ eps }}</li>
+          }
+        </ul>
+        }
+      </div>
+    </div>
+  </div>
+</div>
