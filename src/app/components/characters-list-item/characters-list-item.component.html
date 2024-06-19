@@ -1,9 +1,12 @@
 <div class="row m-0">
-  <div class="col-4">
+
+  <div class="col-4 p-0">
     <img [ngSrc]="data.image" loading="lazy" fill style="object-fit: contain; height: auto; position: static;">
   </div>
 
   <div class="col-4">
+    <h1>{{data.name}}</h1>
+
     <label class="label">Criado em</label>
     <fa-icon [icon]="['fas', 'calendar-days']"></fa-icon> {{data.created | date : 'dd/MM/yyyy'}}<br>
 
