@@ -57,6 +57,7 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
 
   searchCharacters() {
     this.params.page = this.pagesCount();
+
     const sub = this.#charactersService.getCharacters$(this.params).subscribe({
       next: (res: any) => {
         this.pagesTotal.set(res.info.pages);

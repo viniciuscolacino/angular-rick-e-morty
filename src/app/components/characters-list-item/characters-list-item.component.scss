@@ -1,4 +1,13 @@
 :host{
+
+  .image-container{
+    img{
+      height: auto;
+      object-fit: contain;
+      position: static;
+    }
+  }
+
   .icon-calendar{color: var(--default-main-color)}
   .icon-dna{color: var(--default-main-color)}
   .icon-status{

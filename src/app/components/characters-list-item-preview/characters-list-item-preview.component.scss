@@ -19,6 +19,9 @@
 
       img{
         filter: grayscale(.5);
+        height: auto !important;
+        object-fit: contain;
+        position: static !important;
         transition: all .2s;
       }
     }

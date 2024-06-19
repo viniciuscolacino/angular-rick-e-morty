@@ -1,11 +1,9 @@
-@import 'bootstrap/scss/bootstrap';
-
 :host{
   footer{
     color: var(--default-font-color);
     margin-bottom: 200px;
 
-    @include media-breakpoint-up(lg) {
+    @media (min-width: 1200px) {
       margin-bottom: 0;
     }
   }

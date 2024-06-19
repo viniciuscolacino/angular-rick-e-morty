@@ -17,7 +17,7 @@
         </mat-form-field> -->
 
         <div class="search-container">
-          <input type="text" [(ngModel)]="params.name" (keyup)="searchCharacters()" placeholder="Procure por nome"
+          <input type="text" [(ngModel)]="params.name" (keypress)="searchCharacters()" placeholder="Procure por nome"
             class="w-100" />
           <fa-icon [icon]="['fas', 'id-card']"></fa-icon>
         </div>
