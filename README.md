@@ -4,6 +4,7 @@
 # Executar o Projeto
 `ng serve`
 
+
 # Layout
 Eu sei que o projeto não está exatamente igual ao proposto no Figma: algumas cores mudaram.
 Como o projeto permitia uma autonomia criativa, conversei com o RH sobre minha intenção de caprichar no layout e desenvolver temas (light e dark), e me foi dito que isso não seria um problema.
