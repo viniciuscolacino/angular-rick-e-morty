@@ -1,7 +1,7 @@
-@use './scroll' as *;
-@use './typography' as *;
-@use './global' as *;
 @import 'bootstrap/scss/bootstrap';
+@import './scroll';
+@import './global';
+@import './typography';
 
 @import url(_colors.scss);
 @import url(_buttons.scss);
