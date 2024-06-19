@@ -7,8 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Rick-e-Morty": "node dist/rick-e-morty/server/server.mjs",
-    "deploy": "touch ./output_folder/.nojekyll && gh-pages -d output_folder -t true"
+    "serve:ssr:Rick-e-Morty": "node dist/rick-e-morty/server/server.mjs"
   },
   "private": true,
   "dependencies": {
