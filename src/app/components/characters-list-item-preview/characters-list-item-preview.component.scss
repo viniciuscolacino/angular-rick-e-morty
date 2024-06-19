@@ -4,10 +4,10 @@
 
   .character-list-item-preview{
     backdrop-filter: blur(5px);
-    background: rgb(10, 10, 10, .8);
+    background: var(--character-list-item-preview-background-color);
     border-radius: 10px;
-    border: solid 2px #3D3D3D;
-    color: #FFF;
+    border: solid 2px var(--default-border-color);
+    color: var(--default-font-color);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -62,11 +62,15 @@
         color: #333;
         transition: all .2s;
       }
+
+      .active{
+        color: var(--default-main-color);
+      }
     }
 
     &:hover{
-      border-color: #bfde42;
-      box-shadow: 0 0 8px #bfde42;
+      border-color: var(--default-main-color);
+      box-shadow: 0 0 8px var(--default-main-color);
 
       .image-container{
         img{
@@ -75,6 +79,29 @@
           transition: all .2s;
         }
       }
+    }
+  }
+
+  .heart{
+    color: #f0f;
+    font-size: 1rem;
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+
+    &.heart-1{
+      right: 15px;
+      top: 17px;
+    }
+
+    &.heart-2{
+      right: 35px;
+      top: 30px;
+    }
+
+    &.heart-3{
+      right: 45px;
+      top: 5px;
     }
   }
 }

@@ -2,10 +2,14 @@
     .nav-button{
       align-items: center;
       background: var(--menu-nav-item-background-color);
-      border-color: var(--default-border-color);
+      border: solid 1px var(--default-border-color);
       color: var(--menu-nav-item-color);
       display: inline-flex;
       white-space: nowrap;
+
+      .ng-fa-icon{
+        margin-right: .5rem;
+      }
 
       .badge{
         align-items: center;
@@ -46,6 +50,7 @@
 
       &:first-child{
         border-radius: 10px 0 0 10px;
+        border-right: 0;
       }
 
       &:last-child{

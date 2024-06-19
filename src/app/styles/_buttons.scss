@@ -1,0 +1,28 @@
+.button{
+  background: var(--button-background-color);
+  border: solid 1px var(--button-border-color);
+  color: var(--button-color);
+  display: inline-block;
+  font-weight: bold;
+  margin-top: .5rem;
+  padding: 5px 15px;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus{
+    background: var(--button-hover-background-color);
+    border: solid 1px var(--button-hover-border-color);
+    color: var(--button-hover-color);
+  }
+
+  &:disabled{
+    background: var(--button-disabled-background-color);
+    border: solid 1px var(--button-disabled-border-color);
+    color: var(--button-disabled-color);
+    cursor: not-allowed;
+  }
+
+  svg{
+    padding-right: .5rem;
+  }
+}

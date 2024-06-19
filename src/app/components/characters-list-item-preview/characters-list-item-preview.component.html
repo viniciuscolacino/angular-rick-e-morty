@@ -2,7 +2,7 @@
 
   @if(character.fav){
   <div class="fav-container" (click)="removeFavorite(character)">
-    <fa-icon [icon]="['fas', 'heart']" style="color: #bfde42;"></fa-icon>
+    <fa-icon [icon]="['fas', 'heart']" class="active"></fa-icon>
   </div>
   }
 
@@ -12,6 +12,10 @@
   </div>
   }
 
+  <fa-icon [icon]="['fas', 'heart']" class="heart heart-1" [@animationFavorite]="animateFavorite()"></fa-icon>
+  <fa-icon [icon]="['fas', 'heart']" class="heart heart-2" [@animationFavorite]="animateFavorite()"></fa-icon>
+  <fa-icon [icon]="['fas', 'heart']" class="heart heart-3" [@animationFavorite]="animateFavorite()"></fa-icon>
+
   <div class="image-container">
     <img [ngSrc]="character?.image" loading="lazy" fill style="object-fit: contain; height: auto; position: static;">
   </div>
@@ -20,6 +24,6 @@
     <strong class="creepster-regular title" [title]="character.name">{{ character.name }}</strong>
     <fa-icon [icon]="['fas', 'dna']"></fa-icon> {{ character.species }}<br>
 
-    <button (click)="openModal(character)" class="d-block mt-4 m-auto">Detalhes</button>
+    <button (click)="openModal(character)" class="button d-block mt-4 m-auto">Detalhes</button>
   </div>
 </div>

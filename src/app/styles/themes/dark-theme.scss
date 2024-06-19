@@ -11,8 +11,28 @@ $dark-theme: mat.define-dark-theme((
 ));
 
 body.dark-theme{
+  --default-main-color: var(--color-logo--400);
+  --default-font-color: var(--color-white);
+  --default-font-color-negative: var(--color-grey-900);
   --default-border-color: var(--color-grey-600);
   --header-background-color: var(--color-black);
+
+  --menu-nav-item-background-color: transparent;
+  --menu-nav-item-color: var(--color-white);
+  --menu-nav-item-active-background-color: var(--default-main-color);
+  --menu-nav-item-active-color: var(--color-black);
+
+  --button-background-color: var(--color-logo--400);
+  --button-border-color: var(--color-logo--700);
+  --button-color: var(--color-logo--700);
+  --button-hover-background-color: var(--color-logo--700);
+  --button-hover-border-color: var(--color-logo--900);
+  --button-hover-color: var(--color-logo--900);
+  --button-disabled-background-color: var(--color-grey-300);
+  --button-disabled-border-color: var(--color-grey-500);
+  --button-disabled-color: var(--color-grey-500);
+
+  --character-list-item-preview-background-color: rgb(10, 10, 10, .8);
 
   background-attachment: scroll;
   background-color: #252525;

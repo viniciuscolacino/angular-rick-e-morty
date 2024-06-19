@@ -11,13 +11,41 @@ $light-theme: mat.define-light-theme((
 ));
 
 body.light-theme{
+  --default-main-color: var(--color-logo--blue-400);
+  --default-font-color: var(--color-grey-900);
+  --default-font-color-negative: var(--color-white);
   --default-border-color: var(--color-grey-900);
   --header-background-color: var(--color-grey-100);
 
   --menu-nav-item-background-color: transparent;
-  --menu-nav-item-color: var(--color-grey-400: #888888;);
+  --menu-nav-item-color: var(--color-grey-400);
   --menu-nav-item-active-background-color: var(--color-logo--blue-400);
   --menu-nav-item-active-color: var(--color-white);
+
+  // --menu-nav-item-favorites-badge-background-color
+  // --menu-nav-item-favorites-badge-border
+  // --menu-nav-item-favorites-badge-color
+
+  --button-background-color: var(--color-logo--blue-400);
+  --button-border-color: var(--color-logo--blue-800);
+  --button-color: var(--color-logo--blue-800);
+  --button-hover-background-color: var(--color-logo--blue-600);
+  --button-hover-border-color: var(--color-logo--blue-800);
+  --button-hover-color: var(--color-logo--blue-800);
+  --button-disabled-background-color: var(--color-grey-300);
+  --button-disabled-border-color: var(--color-grey-500);
+  --button-disabled-color: var(--color-grey-500);
+
+  --input-search-background-color: transparent;
+  --input-search-border-color: var(--default-border-color);
+  --input-search-color: var(--default-border-color);
+  --input-search-focus-background-color: transparent;
+  --input-search-focus-border-color: var(--color-white);
+  --input-search-focus-color: var(--color-white);
+
+  --character-list-item-preview-background-color: rgb(209, 209, 209, .8);
+  // --character-list-item-preview-border-color:
+  // --character-list-item-preview-color:
 
   background-attachment: scroll;
   background-image: url('../../../assets/img/theme-light/bg-rick.jpg'), url('../../../assets/img/theme-light/bg-morty.jpg');

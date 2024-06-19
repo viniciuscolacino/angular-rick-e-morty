@@ -63,15 +63,15 @@
     <div class="row">
       @if(pagesTotal() > 1){
       <div class="col-3 d-flex justify-content-start">
-        <button (click)="previousPage()" [disabled]="pagesCount() == 1">Anterior</button>
+        <button class="button" (click)="previousPage()" [disabled]="pagesCount() == 1">Anterior</button>
       </div>
 
-      <div class="col-6 d-flex justify-content-center">
-        {{ pagesCount() }} / {{ pagesTotal() }}
+      <div class="col-6 d-flex justify-content-center align-items-center">
+        <p class="pagesCount">{{ pagesCount() }} / {{ pagesTotal() }}</p>
       </div>
 
       <div class="col-3 d-flex justify-content-end">
-        <button (click)="nextPage()" [disabled]="pagesCount() == pagesTotal()">Próxima</button>
+        <button class="button" (click)="nextPage()" [disabled]="pagesCount() == pagesTotal()">Próxima</button>
       </div>
       }
     </div>

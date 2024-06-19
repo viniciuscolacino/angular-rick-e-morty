@@ -1,7 +1,7 @@
 <div class="btn-group1" role="group">
   <button type="button" class="nav-button" (click)="onThemeChanged(false)"
-    [ngClass]="{'active' : !currentDarkTheme()}"><fa-icon [icon]="['fas', 'sun']"></fa-icon></button>
+    [ngClass]="{'active' : !currentDarkTheme()}"><fa-icon [icon]="['fas', 'sun']"></fa-icon>Light</button>
 
   <button type="button" class="nav-button" (click)="onThemeChanged(true)"
-    [ngClass]="{'active' : currentDarkTheme()}"><fa-icon [icon]="['fas', 'moon']"></fa-icon></button>
+    [ngClass]="{'active' : currentDarkTheme()}">Dark<fa-icon [icon]="['fas', 'moon']"></fa-icon></button>
 </div>

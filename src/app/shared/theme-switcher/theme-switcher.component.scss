@@ -1,20 +1,31 @@
 :host{
   .nav-button{
     background: none;
-    border-color: #3D3D3D;
-    color: #888;
+    border: solid 1px var(--default-border-color);
+    color: var(--default-font-color);
+    white-space: nowrap;
 
     &.active{
-      background: #FFF;
-      color: #111;
+      background: var(--default-main-color);
+      color: var(--default-font-color-negative);
     }
 
     &:first-child{
       border-radius: 10px 0 0 10px;
+
+      .ng-fa-icon{
+        margin-right: .5rem;
+      }
     }
 
     &:last-child{
       border-radius: 0 10px 10px 0;
+
+      .ng-fa-icon{
+        margin-left: .5rem;
+      }
     }
+
+
   }
 }
