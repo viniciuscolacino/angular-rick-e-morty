@@ -28,3 +28,15 @@ h1{
     font-size: 3rem;
   }
 }
+
+.label{
+  color: #666;
+  display: block;
+  font-size: .85rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+
+  &:first-child{
+    margin-top: 0;
+  }
+}

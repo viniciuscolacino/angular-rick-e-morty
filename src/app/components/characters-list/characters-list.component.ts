@@ -50,6 +50,8 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
   favoritesCharacters$ = this.#charactersService.getFavoriteCharacters$();
   characterSubscription = new Subscription();
 
+  paramName: string = '';
+
   ngOnInit(): void {
     this.params.page = 1;
     this.searchCharacters();

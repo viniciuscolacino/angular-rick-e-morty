@@ -3,18 +3,9 @@ import { CharactersService } from '@services/characters.service';
 import { NgOptimizedImage } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Character } from 'app/core/models/character';
-import { ModalDismissReasons, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { CharactersListItemComponent } from '@components/characters-list-item/characters-list-item.component';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-characters-list-item-preview',
@@ -29,7 +20,6 @@ import {
         top: '-30px'
       })),
 
-      //transition('* => animationFavorite', animate('1s'))
       transition('* => favoriteThisItem', [
         animate('1s', keyframes([
           style({
@@ -59,7 +49,6 @@ import {
 export class CharactersListItemPreviewComponent {
   @Input() public character: any;
   #charactersService = inject(CharactersService);
-  #modalService = inject(NgbModal);
   public animateFavorite = signal('');
   readonly dialog = inject(MatDialog)
 
@@ -75,8 +64,7 @@ export class CharactersListItemPreviewComponent {
 
 
   openDialog(character: Character): void {
-    console.log(character);
-    const dialogRef = this.dialog.open(CharactersListItemComponent, {
+    this.dialog.open(CharactersListItemComponent, {
       data: character,
     });
   }

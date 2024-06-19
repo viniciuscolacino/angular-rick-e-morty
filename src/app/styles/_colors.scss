@@ -1,11 +1,10 @@
 :root{
-
   //azul do logo
   --color-logo--blue-50: #effbfc;
   --color-logo--blue-100: #d7f2f6;
   --color-logo--blue-200: #b4e5ed;
   --color-logo--blue-300: #80d2e0;
-  --color-logo--blue-400: #42b4ca; //esse
+  --color-logo--blue-400: #42b4ca; // cor da font do logo
   --color-logo--blue-500: #2999b1;
   --color-logo--blue-600: #257c95;
   --color-logo--blue-700: #24647a;
@@ -38,7 +37,6 @@
   --color-logo-border--dark-blue-800: #2a5760;
   --color-logo-border--dark-blue-900: #274952;
   --color-logo-border--dark-blue-950: #193840; // cor da borda
-
 
   // cinza fundo
   --color-grey-50: #f6f6f6;
@@ -79,9 +77,6 @@
   --color-orange-900: #6e2719;
   --color-orange-950: #3f1109;
 
-
   --color-white: #FFF;
   --color-black: #000;
-
-
 }

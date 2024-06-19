@@ -8,7 +8,7 @@
         </h1>
       </div>
 
-      <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center flex-column">
         <!-- <mat-form-field appearance="outline" class="w-100">
           <mat-label>Procure por nome</mat-label>
           <input matInput placeholder="Exemplo: Morty Smith" [(ngModel)]="params.name" (keyup)="searchCharacters()">
@@ -17,14 +17,18 @@
         </mat-form-field> -->
 
         <div class="search-container">
-          <input type="text" [(ngModel)]="params.name" (keypress)="searchCharacters()" placeholder="Procure por nome"
+          <!-- <input type="text" [(ngModel)]="paramName" (keypress)="onSearchChange(searchByName.value)" #searchByName
+          placeholder="Procure por nome" class="w-100" /> -->
+          <input type="text" [(ngModel)]="params.name" (keyup.enter)="searchCharacters()" placeholder="Procure por nome"
             class="w-100" />
           <fa-icon [icon]="['fas', 'id-card']"></fa-icon>
         </div>
+        <span class="search-hint">Pressione Enter para pesquisar</span>
+
 
       </div>
 
-      <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center align-items-center">
+      <div class="col-12 col-md-4 col-lg-3 d-flex justify-content-center flex-column">
         <!-- <mat-form-field appearance="outline" class="w-100">
           <mat-label>Procure por espécie</mat-label>
           <input matInput placeholder="Exemplo: Morty Smith" [(ngModel)]="params.species" (keyup)="searchCharacters()">
@@ -33,10 +37,11 @@
         </mat-form-field> -->
 
         <div class="search-container">
-          <input type="text" [(ngModel)]="params.species" (keyup)="searchCharacters()" placeholder="Procure por espécie"
-            class="w-100" />
+          <input type="text" [(ngModel)]="params.species" (keyup.enter)="searchCharacters()"
+            placeholder="Procure por espécie" class="w-100" />
           <fa-icon [icon]="['fas', 'dna']"></fa-icon>
         </div>
+        <span class="search-hint">Pressione Enter para pesquisar</span>
       </div>
     </div>
 

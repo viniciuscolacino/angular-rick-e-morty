@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit, inject, signal } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Observable, shareReplay, map, filter, BehaviorSubject, combineLatest, of } from 'rxjs';
 import { Character } from '../models/character';
@@ -11,9 +11,8 @@ import { Character } from '../models/character';
 export class CharactersService {
   constructor() { }
 
-  #url: string = "https://rickandmortyapi.com/api/character";
+  #url: string = `${environment.api}/api/character`;
   #http = inject(HttpClient);
-  #totalPages$ = new BehaviorSubject<number>(0);
   #favoritesCharacters$ = new BehaviorSubject<Character[]>([]);
   #favoritesTotal$ = new BehaviorSubject<number>(0);
 

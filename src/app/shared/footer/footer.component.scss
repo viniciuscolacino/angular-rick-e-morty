@@ -3,8 +3,13 @@
     color: var(--default-font-color);
     margin-bottom: 200px;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
       margin-bottom: 0;
+    }
+
+    .mottu-logo{
+      display: block;
+      max-width: 150px;
     }
   }
 }
