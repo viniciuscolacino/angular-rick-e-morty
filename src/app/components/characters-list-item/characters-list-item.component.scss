@@ -1,5 +1,13 @@
 :host{
-  position: relative;
+  display: block;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  @media (min-width: 768px) {
+    display: contents;
+    position: relative;
+    overflow: hidden;
+  }
 
   .close-modal{
     background: transparent;
@@ -55,7 +63,7 @@
       }
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
       bottom: 0;
       left: 0;
       overflow: auto;

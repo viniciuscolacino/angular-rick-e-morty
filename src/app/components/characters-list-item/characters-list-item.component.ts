@@ -30,7 +30,10 @@ import { AvatarComponent } from '@shared/avatar/avatar.component';
     NgOptimizedImage,
   ],
   templateUrl: './characters-list-item.component.html',
-  styleUrl: './characters-list-item.component.scss'
+  styleUrl: './characters-list-item.component.scss',
+  host: {
+    'class': 'custom-scrollbar',
+  }
 })
 
 export class CharactersListItemComponent {
