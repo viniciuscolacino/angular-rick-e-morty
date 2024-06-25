@@ -1,4 +1,15 @@
 :host{
+  position: relative;
+
+  .close-modal{
+    background: transparent;
+    border: none;
+    color: var(--default-main-color);
+    font-size: 2rem;
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+  }
 
   h1{
     text-align: center;
@@ -8,17 +19,42 @@
   }
 
   .image-container{
+    padding-left: 0;
+
     img{
+      border-radius: 10px;
       display: block;
       height: auto;
       margin: 0 auto;
-      max-width: 100%;
       object-fit: contain;
       position: static;
+      width: 100%;
     }
   }
 
   .episodes-container{
+    .ep-id{
+      color: var(--default-border-color);
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+    .ep-title{
+      color: var(--default-main-color);
+      font-size: 1.1rem;
+    }
+
+    .ep-air-date{
+      font-size: .8rem;
+    }
+
+    .row{
+      border-bottom: solid 1px var(--default-border-color);
+
+      &:last-child{
+        border-bottom: 0;
+      }
+    }
+
     @media (min-width: 1200px) {
       bottom: 0;
       left: 0;

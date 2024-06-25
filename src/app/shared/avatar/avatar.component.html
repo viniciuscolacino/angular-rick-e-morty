@@ -1,0 +1,19 @@
+@if(character.fav){
+<div class="fav-container" (click)="removeFavorite(character)">
+  <fa-icon [icon]="['fas', 'heart']" class="active"></fa-icon>
+</div>
+}
+
+@else{
+<div class="fav-container" (click)="addFavorite(character)">
+  <fa-icon [icon]="['far', 'heart']"></fa-icon>
+</div>
+}
+
+<fa-icon [icon]="['fas', 'heart']" class="heart heart-1" [@animationFavorite]="animateFavorite()"></fa-icon>
+<fa-icon [icon]="['fas', 'heart']" class="heart heart-2" [@animationFavorite]="animateFavorite()"></fa-icon>
+<fa-icon [icon]="['fas', 'heart']" class="heart heart-3" [@animationFavorite]="animateFavorite()"></fa-icon>
+
+<div class="image-container">
+  <img [ngSrc]="character?.image" loading="lazy" fill>
+</div>

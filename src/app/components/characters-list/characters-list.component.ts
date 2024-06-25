@@ -1,18 +1,16 @@
-import { Component, HostBinding, OnDestroy, OnInit, computed, effect, inject, signal } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Component, HostBinding, OnDestroy, OnInit, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CharactersService } from '@services/characters.service';
 import { CharactersListItemPreviewComponent } from '@components/characters-list-item-preview/characters-list-item-preview.component';
-import { FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BehaviorSubject, Observable, Subscription, combineLatest, map } from 'rxjs';
-import { AsyncPipe, DOCUMENT } from '@angular/common';
-import { Character } from 'app/core/models/character';
+import { BehaviorSubject, Subscription, } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EmptyListComponent } from '@shared/empty-list/empty-list.component';
 import { MatInput, MatLabel, MatFormField, MatSuffix, MatPrefix, MatHint } from '@angular/material/input'
 import { MatIconModule } from '@angular/material/icon';
+import { Episode } from 'app/core/models/episode';
 
 @Component({
   selector: 'app-characters-list',
@@ -51,11 +49,15 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
   characterSubscription = new Subscription();
 
   paramName: string = '';
+  paramEps = {} as any;
+  episodes: Episode[] = [];
 
   ngOnInit(): void {
     this.params.page = 1;
+    this.paramEps.page = 1;
     this.searchCharacters();
   }
+
 
   searchCharacters() {
     this.params.page = this.pagesCount();
@@ -67,6 +69,9 @@ export default class CharactersListComponent implements OnInit, OnDestroy {
         this.errorNotFound.set(false);
       },
       error: (error: any) => {
+        if (error.status == 404) {
+          this.errorNotFound.set(true);
+        }
         this.errorNotFound.set(true);
       },
     })

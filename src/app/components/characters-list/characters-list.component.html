@@ -22,6 +22,9 @@
           <input type="text" [(ngModel)]="params.name" (keyup.enter)="searchCharacters()" placeholder="Procure por nome"
             class="w-100" />
           <fa-icon [icon]="['fas', 'id-card']"></fa-icon>
+          <button class="button search-button" type="button" (click)="searchCharacters()">
+            <fa-icon [icon]="['fas', 'magnifying-glass']"></fa-icon>
+          </button>
         </div>
         <span class="search-hint">Pressione Enter para pesquisar</span>
 
@@ -40,9 +43,16 @@
           <input type="text" [(ngModel)]="params.species" (keyup.enter)="searchCharacters()"
             placeholder="Procure por espécie" class="w-100" />
           <fa-icon [icon]="['fas', 'dna']"></fa-icon>
+
+          <button class="button search-button" type="button" (click)="searchCharacters()">
+            <fa-icon [icon]="['fas', 'magnifying-glass']"></fa-icon>
+          </button>
         </div>
         <span class="search-hint">Pressione Enter para pesquisar</span>
+
+
       </div>
+
     </div>
 
     @if(errorNotFound()){

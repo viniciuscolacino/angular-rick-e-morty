@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { environment } from 'environments/environment';
-import { Observable, shareReplay, map, filter, BehaviorSubject, combineLatest, of } from 'rxjs';
+import { Observable, shareReplay, map, BehaviorSubject } from 'rxjs';
 import { Character } from '../models/character';
+import { Episode } from '../models/episode';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class CharactersService {
   #favoritesCharacters$ = new BehaviorSubject<Character[]>([]);
   #favoritesTotal$ = new BehaviorSubject<number>(0);
 
-  public getCharacters$(params: any): Observable<any> {
+  public getCharacters$(params: any): Observable<Episode[]> {
     return this.#http.get<any>(this.#url, { params })
       .pipe(
         shareReplay(),
@@ -38,11 +39,11 @@ export class CharactersService {
     return this.#favoritesCharacters$.asObservable();
   }
 
-  get favoritesTotal() {
+  public get favoritesTotal() {
     return this.#favoritesTotal$.asObservable();
   }
 
-  addFavorite(character: Character) {
+  public addFavorite(character: Character) {
     const currentFavorites = this.#favoritesCharacters$.getValue();
 
     if (!currentFavorites.find((item) => item.id === character.id)) {
@@ -52,7 +53,7 @@ export class CharactersService {
     }
   }
 
-  removeFavorite(character: Character) {
+  public removeFavorite(character: Character) {
     const currentFavorites = this.#favoritesCharacters$.getValue();
     if (currentFavorites.find((item) => item.id === character.id)) {
       character.fav = false;
